@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SteelHatch Capital</title>
 <meta name="description" content="Identifying Secure and High Return Investments. SteelHatch provides dynamic fintech and liquidity solutions.">
-
-<!-- Open Graph / social preview -->
 <meta property="og:title" content="SteelHatch Capital">
 <meta property="og:description" content="Identifying Secure and High Return Investments">
 <meta property="og:type" content="website">
@@ -14,190 +12,151 @@
 <meta property="og:site_name" content="SteelHatch">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- NOTE: this site is intentionally indexable (no 'noindex'), unlike the old Wix version -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --paper:#F2F0E9;
-    --paper-2:#E9E6DC;
-    --ink:#141414;
-    --ink-soft:#3d3d3a;
-    --navy:#2E3E54;
-    --navy-deep:#222F41;
-    --slate:#5B7196;
-    --sky:#BFD0E3;
-    --sky-soft:#D6E0EC;
+    --paper:#F2F0E9; --paper-2:#E9E6DC;
+    --ink:#141414; --ink-soft:#3d3d3a;
+    --navy:#2E3E54; --navy-deep:#222F41;
+    --slate:#5B7196; --sky:#BFD0E3; --sky-soft:#D6E0EC;
     --line:#1414141a;
-    --maxw:1180px;
+    --maxw:1720px;
+    --gutter:clamp(24px,5vw,120px);
     --r:14px;
   }
-
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Inter",system-ui,sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
   h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.04;letter-spacing:-0.02em;margin:0;}
   p{margin:0 0 1rem;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
 
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-  .section{padding:96px 0;}
-  @media(max-width:720px){.section{padding:64px 0;}}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
+  .section{padding:clamp(64px,8vw,120px) 0;}
 
   /* ---------- header ---------- */
-  header.site{
-    position:sticky;top:0;z-index:50;
-    background:rgba(242,240,233,.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(242,240,233,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
-  .brand .mark{width:34px;height:34px;flex:0 0 auto;}
-  .brand .word{font-family:"Archivo";font-weight:800;font-size:18px;letter-spacing:.04em;line-height:1;}
-  .brand .word small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.34em;color:var(--slate);margin-top:3px;}
+  .brand .mark{width:36px;height:36px;flex:0 0 auto;}
+  .brand .word{font-family:"Archivo";font-weight:800;font-size:19px;letter-spacing:.04em;line-height:1;}
+  .brand .word small{display:block;font-size:10px;font-weight:600;letter-spacing:.34em;color:var(--slate);margin-top:3px;}
 
-  .btn{
-    display:inline-block;font-family:"Archivo";font-weight:700;font-size:14px;
-    letter-spacing:.02em;text-decoration:none;cursor:pointer;
-    padding:13px 26px;border-radius:999px;border:1.5px solid var(--ink);
-    background:transparent;color:var(--ink);transition:all .18s ease;
-  }
+  .btn{display:inline-block;font-family:"Archivo";font-weight:700;font-size:14px;letter-spacing:.02em;text-decoration:none;cursor:pointer;padding:13px 28px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:all .18s ease;}
   .btn:hover{background:var(--ink);color:var(--paper);}
   .btn--solid{background:var(--navy);border-color:var(--navy);color:#fff;}
   .btn--solid:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff;}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;}
-  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:80px;padding-bottom:80px;}
-  .hero h1{font-weight:900;font-size:clamp(40px,6.4vw,82px);}
-  .hero .lede{margin-top:26px;max-width:30ch;color:var(--ink-soft);font-size:18px;}
-  .hero .cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
-  .geo{aspect-ratio:1/1;width:100%;}
-  @media(max-width:880px){
-    .hero .wrap{grid-template-columns:1fr;gap:32px;}
-    .geo{max-width:360px;order:-1;}
+  /* ---------- hero (full-bleed) ---------- */
+  .hero{display:grid;grid-template-columns:1fr clamp(360px,40vw,880px);align-items:stretch;min-height:calc(100vh - 78px);}
+  .hero__content{align-self:center;padding:clamp(40px,5vw,80px) clamp(40px,4vw,72px) clamp(40px,5vw,80px) var(--gutter);}
+  .hero__inner{max-width:920px;}
+  .hero h1{font-weight:900;font-size:clamp(42px,5.6vw,94px);}
+  .hero .lede{margin-top:24px;max-width:34ch;color:var(--ink-soft);font-size:clamp(17px,1.4vw,20px);}
+  .hero .cta-row{margin:32px 0 44px;display:flex;gap:14px;flex-wrap:wrap;}
+  .hero__art{position:relative;overflow:hidden;}
+  .hero__art svg{position:absolute;inset:0;width:100%;height:100%;}
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:0;}
+    .hero__art{order:2;height:300px;}
+    .hero__content{padding:48px var(--gutter);}
   }
 
   /* ---------- service cards ---------- */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  @media(max-width:720px){.cards{grid-template-columns:1fr;}}
-  .card{
-    border:1.5px solid var(--ink);border-radius:var(--r);
-    display:flex;flex-direction:column;overflow:hidden;background:var(--paper);
-  }
-  .card .body{padding:30px 30px 26px;flex:1;}
-  .card h3{font-size:24px;font-weight:800;margin-bottom:16px;}
-  .card p{color:var(--ink-soft);font-size:15.5px;}
-  .card .foot{
-    border-top:1.5px solid var(--ink);padding:18px 30px;
-    font-family:"Archivo";font-weight:700;font-size:14.5px;
-    display:flex;align-items:center;justify-content:space-between;text-decoration:none;
-  }
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1000px;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+  .card{border:1.5px solid var(--ink);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden;background:var(--paper);}
+  .card .body{padding:28px 28px 24px;flex:1;}
+  .card h3{font-size:22px;font-weight:800;margin-bottom:14px;}
+  .card p{color:var(--ink-soft);font-size:15px;}
+  .card .foot{border-top:1.5px solid var(--ink);padding:17px 28px;font-family:"Archivo";font-weight:700;font-size:14.5px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;}
   .card .foot.muted{color:var(--slate);}
   a.foot:hover{background:var(--sky-soft);}
 
-  /* ---------- about ---------- */
-  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
-  @media(max-width:880px){.about{grid-template-columns:1fr;gap:36px;}}
-  .eyebrow{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:18px;}
-  h2.big{font-size:clamp(30px,4.4vw,46px);font-weight:800;margin-bottom:24px;}
-  .about p{color:var(--ink-soft);font-size:16px;}
-  .about-art{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--navy);position:relative;}
+  /* ---------- full-bleed bands ---------- */
+  .band{width:100%;}
+  .band--sky{background:var(--sky-soft);}
+  .band--navy{background:var(--navy);color:#fff;}
+  .band--ink{background:var(--ink);color:var(--paper);}
 
-  /* ---------- fixed income detail ---------- */
-  .fis{background:var(--navy);color:#fff;border-radius:24px;padding:60px;}
-  @media(max-width:720px){.fis{padding:38px 26px;border-radius:18px;}}
-  .fis .eyebrow{color:var(--sky);}
-  .fis h2{color:#fff;}
-  .fis p{color:#dfe6ef;}
-  .fis .btn{border-color:#fff;color:#fff;margin-top:6px;}
-  .fis .btn:hover{background:#fff;color:var(--navy);}
+  .eyebrow{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:18px;}
+  h2.big{font-size:clamp(30px,4vw,52px);font-weight:800;margin-bottom:24px;}
+
+  /* ---------- about ---------- */
+  .about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center;}
+  @media(max-width:900px){.about{grid-template-columns:1fr;gap:36px;}}
+  .about p{color:var(--ink-soft);font-size:16px;}
+  .about-art{border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--navy);}
+
+  /* ---------- fixed income band ---------- */
+  .band--navy .eyebrow{color:var(--sky);}
+  .fis-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  @media(max-width:820px){.fis-grid{grid-template-columns:1fr;}}
+  .band--navy p{color:#dfe6ef;font-size:17px;}
+  .band--navy .btn{border-color:#fff;color:#fff;}
+  .band--navy .btn:hover{background:#fff;color:var(--navy);}
 
   /* ---------- features ---------- */
   .features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
-  @media(max-width:880px){.features{grid-template-columns:1fr 1fr;}}
-  @media(max-width:520px){.features{grid-template-columns:1fr;}}
-  .feature{background:var(--paper);padding:30px 26px;}
+  @media(max-width:900px){.features{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--paper);padding:32px 28px;}
   .feature .n{font-family:"Space Mono";font-size:12px;color:var(--slate);margin-bottom:14px;}
   .feature h3{font-size:19px;font-weight:800;margin-bottom:12px;}
   .feature p{font-size:14.5px;color:var(--ink-soft);margin:0;}
 
   /* ---------- stats ---------- */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
-  @media(max-width:720px){.stats{grid-template-columns:1fr 1fr;gap:34px 20px;}}
-  .stat .num{font-family:"Space Mono";font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1;color:var(--navy);}
+  @media(max-width:720px){.stats{grid-template-columns:1fr 1fr;gap:38px 20px;}}
+  .stat .num{font-family:"Space Mono";font-weight:700;font-size:clamp(36px,5vw,60px);line-height:1;color:var(--navy);}
   .stat .lab{margin-top:10px;font-size:14px;color:var(--ink-soft);}
 
   /* ---------- partners ---------- */
-  .partners{display:flex;flex-wrap:wrap;gap:18px;}
-  .plogo{
-    flex:1 1 160px;min-height:96px;border:1px dashed #14141433;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;text-align:center;
-    color:#9a988f;font-size:12.5px;font-family:"Space Mono";padding:14px;background:var(--paper-2);
-  }
+  .partners{display:grid;grid-template-columns:repeat(5,1fr);gap:30px;align-items:center;}
+  @media(max-width:820px){.partners{grid-template-columns:repeat(3,1fr);gap:34px 24px;}}
+  @media(max-width:480px){.partners{grid-template-columns:repeat(2,1fr);}}
+  .plogo{display:flex;align-items:center;justify-content:center;min-height:64px;}
+  .plogo img{max-height:52px;width:auto;object-fit:contain;}
+  .pname{font-family:"Archivo";font-weight:800;font-size:clamp(17px,1.5vw,22px);letter-spacing:.01em;color:var(--ink-soft);}
 
   /* ---------- contact ---------- */
-  .contact{background:var(--ink);color:var(--paper);border-radius:24px;padding:60px;}
-  @media(max-width:880px){.contact{padding:40px 26px;border-radius:18px;}}
-  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,64px);}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:34px;}}
-  .contact h2{color:#fff;font-size:clamp(28px,4vw,42px);}
-  .contact .hi{font-family:"Archivo";font-weight:800;font-size:22px;margin-bottom:6px;}
-  .contact a.mail{font-family:"Space Mono";color:var(--sky);text-decoration:none;border-bottom:1px solid #ffffff33;padding-bottom:2px;}
+  .band--ink h2{color:#fff;font-size:clamp(28px,4vw,46px);}
+  .band--ink .hi{font-family:"Archivo";font-weight:800;font-size:22px;margin-bottom:6px;}
+  a.mail{font-family:"Space Mono";color:var(--sky);text-decoration:none;border-bottom:1px solid #ffffff33;padding-bottom:2px;}
   .socials{margin-top:26px;display:flex;gap:14px;}
   .socials a{font-family:"Archivo";font-weight:700;font-size:13px;border:1px solid #ffffff44;border-radius:999px;padding:9px 18px;text-decoration:none;color:#fff;transition:.18s;}
   .socials a:hover{background:#fff;color:var(--ink);}
-
-  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  @media(max-width:520px){form .row{grid-template-columns:1fr;}}
+  form .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:520px){form .frow{grid-template-columns:1fr;}}
   .field{margin-bottom:14px;}
   label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:#cfcdc6;letter-spacing:.02em;}
-  input,textarea{
-    width:100%;font-family:inherit;font-size:15px;color:#fff;
-    background:#ffffff0d;border:1px solid #ffffff2e;border-radius:10px;padding:12px 14px;
-  }
+  input,textarea{width:100%;font-family:inherit;font-size:15px;color:#fff;background:#ffffff0d;border:1px solid #ffffff2e;border-radius:10px;padding:12px 14px;}
   input:focus,textarea:focus{outline:2px solid var(--sky);outline-offset:1px;border-color:transparent;}
-  textarea{min-height:108px;resize:vertical;}
+  textarea{min-height:110px;resize:vertical;}
   .hp{position:absolute;left:-9999px;}
-  button.submit{
-    margin-top:6px;font-family:"Archivo";font-weight:700;font-size:15px;cursor:pointer;
-    background:var(--sky);color:var(--ink);border:0;border-radius:999px;padding:14px 32px;transition:.18s;
-  }
+  button.submit{margin-top:6px;font-family:"Archivo";font-weight:700;font-size:15px;cursor:pointer;background:var(--sky);color:var(--ink);border:0;border-radius:999px;padding:14px 34px;transition:.18s;}
   button.submit:hover{background:#fff;}
   button.submit:disabled{opacity:.55;cursor:not-allowed;}
   #form-status{margin-top:14px;font-size:14px;min-height:20px;}
-  #form-status.ok{color:#9fe0b0;}
-  #form-status.err{color:#f3b0a8;}
+  #form-status.ok{color:#9fe0b0;} #form-status.err{color:#f3b0a8;}
 
-  /* ---------- footer ---------- */
   footer.site{border-top:1px solid var(--line);padding:34px 0;}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);}
-
-  .divider-label{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:30px;}
-
+  .divider-label{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:34px;}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 </style>
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="SteelHatch home">
-      <!-- Placeholder logo mark (swap for your real SHQ logo file if you like) -->
       <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
         <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#141414" stroke-width="6"/>
         <polygon points="50,26 71,38 71,62 50,74 29,62 29,38" fill="#2E3E54"/>
@@ -208,183 +167,154 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="wrap">
-    <div>
+  <div class="hero__content">
+    <div class="hero__inner">
       <h1>Fundamentals &amp; Quantitative Methods as Profit Drivers</h1>
       <p class="lede">Dynamic fintech and liquidity solutions, built on arbitrage and disciplined risk.</p>
-      <div class="cta-row">
-        <a class="btn btn--solid" href="#contact">Contact Us</a>
-        <a class="btn" href="#capital">Learn More</a>
+      <div class="cta-row"><a class="btn btn--solid" href="#contact">Contact Us</a></div>
+      <div class="cards">
+        <div class="card">
+          <div class="body">
+            <h3>Fixed-Income Security</h3>
+            <p>SteelHatch allows you to incubate exponential growth and liquidity for your funds.</p>
+            <p>Our commitment to Delta Neutrality means that investors can expect a steady growth portfolio with minimal drawdowns.</p>
+          </div>
+          <a class="foot" href="#fixed-income">More Information <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="card">
+          <div class="body">
+            <h3>Liquidity Services</h3>
+            <p>SteelHatch uses bespoke liquidity pools tailored to connect your demand with market supply as quickly as possible.</p>
+            <p>Our liquidity technology provides retail brokers with multi-asset execution, prime brokerage services as well as a sophisticated suite of trading tools.</p>
+          </div>
+          <div class="foot muted">Coming Soon</div>
+        </div>
       </div>
     </div>
-    <!-- Bauhaus-style geometric composition (recreated in SVG, matches the original) -->
-    <svg class="geo" viewBox="0 0 400 400" aria-hidden="true">
-      <rect width="400" height="400" fill="#E9E6DC"/>
-      <path d="M0 0 H200 A200 200 0 0 1 0 200 Z" fill="#BFD0E3"/>
-      <path d="M400 0 V200 A200 200 0 0 1 200 0 Z" fill="#2E3E54"/>
-      <rect x="0" y="200" width="200" height="200" fill="#5B7196"/>
-      <path d="M400 400 H200 A200 200 0 0 1 400 200 Z" fill="#141414"/>
-      <circle cx="200" cy="200" r="46" fill="#E9E6DC"/>
+  </div>
+  <div class="hero__art">
+    <svg viewBox="0 0 500 750" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="500" height="750" fill="#E9E6DC"/>
+      <g fill="#BFD0E3"><g transform="translate(0,0) rotate(90 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+      <g fill="#2E3E54"><g transform="translate(250,0) rotate(180 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+      <g fill="#5B7196"><g transform="translate(0,250) rotate(0 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+      <g fill="#D6E0EC"><g transform="translate(250,250) rotate(270 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+      <g fill="#2E3E54"><g transform="translate(0,500) rotate(90 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+      <g fill="#141414"><g transform="translate(250,500) rotate(180 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
     </svg>
   </div>
 </section>
 
-<!-- ============ SERVICE CARDS ============ -->
-<section class="section" style="padding-top:0;">
-  <div class="wrap">
-    <div class="cards">
-      <div class="card">
-        <div class="body">
-          <h3>Fixed-Income Security</h3>
-          <p>SteelHatch allows you to incubate exponential growth and liquidity for your funds.</p>
-          <p>Our commitment to Delta Neutrality means that investors can expect a steady growth portfolio with minimal drawdowns.</p>
+<!-- ABOUT -->
+<div class="band band--sky">
+  <section class="section wrap" id="capital">
+    <div class="about">
+      <div>
+        <div class="eyebrow">SteelHatch Capital</div>
+        <h2 class="big">A proprietary firm for fintech and liquidity solutions.</h2>
+        <p>We provide dynamic fintech and liquidity solutions to a broad range of clients. Our primary function is identifying and managing arbitrages, with proprietary risk as a secondary income stream.</p>
+        <p>An arbitrage-based fund minimises market exposure. We identify mispricing across all markets and guarantee a profit from each trade idea.</p>
+        <p>Our team's background spans both institutional and retail sectors, including liquidity providers, proprietary firms, hedge funds, retail brokers, and digital currency exchanges.</p>
+      </div>
+      <div class="about-art" aria-hidden="true">
+        <svg viewBox="0 0 400 250" width="100%" height="100%">
+          <rect width="400" height="250" fill="#2E3E54"/>
+          <path d="M40 200 L120 140 L185 170 L265 95 L360 50" fill="none" stroke="#BFD0E3" stroke-width="4"/>
+          <circle cx="120" cy="140" r="6" fill="#fff"/><circle cx="185" cy="170" r="6" fill="#fff"/>
+          <circle cx="265" cy="95" r="6" fill="#fff"/><circle cx="360" cy="50" r="6" fill="#fff"/>
+          <g font-family="Space Mono,monospace" fill="#7e93b3" font-size="13">
+            <text x="36" y="235">arbitrage</text><text x="300" y="235">δ-neutral</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FIXED INCOME BAND -->
+<div class="band band--navy" id="fixed-income">
+  <section class="section wrap">
+    <div class="fis-grid">
+      <div>
+        <div class="eyebrow">Fixed-Income Security</div>
+        <h2 class="big">A coupon paid out or compounded monthly on liquid assets.</h2>
+      </div>
+      <div>
+        <p>SteelHatch allows a wide range of deposit and withdrawal methods. Clients can move between security and decentralisation based on preference.</p>
+        <a class="btn" href="#contact" style="margin-top:8px;">Start Investing</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FEATURES -->
+<section class="section wrap">
+  <div class="features">
+    <div class="feature"><div class="n">01</div><h3>Principal Protected</h3><p>SteelHatch guarantees a minimum return equal to the client's initial investment amount, prioritising coupon payments over profits.</p></div>
+    <div class="feature"><div class="n">02</div><h3>Excess Returns</h3><p>Operating on a small-mid enterprise scale, clients benefit from market-exceeding returns without struggling for liquidity.</p></div>
+    <div class="feature"><div class="n">03</div><h3>Delta Neutral</h3><p>Volatility, regulatory shifts and unexpected events are unavoidable — SteelHatch empowers you to thrive despite them.</p></div>
+    <div class="feature"><div class="n">04</div><h3>Supreme Liquidity</h3><p>We invest in assets and strategies that show results in a low time frame. Clients enjoy swift withdrawals processed within a week.</p></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section wrap" style="padding-top:0;">
+  <div class="divider-label">Exponential Growth</div>
+  <div class="stats">
+    <div class="stat"><div class="num">12.68%</div><div class="lab">Annualised Returns</div></div>
+    <div class="stat"><div class="num">1%</div><div class="lab">Monthly Returns</div></div>
+    <div class="stat"><div class="num">100+</div><div class="lab">Managed Accounts</div></div>
+    <div class="stat"><div class="num">0</div><div class="lab">Material Drawdowns</div></div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section wrap" style="padding-top:0;">
+  <div class="divider-label">Trusted Partners in Financial Success</div>
+  <div class="partners">
+    <div class="plogo"><img src="logos/binance.svg" alt="Binance" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'pname',textContent:'Binance'}))"></div>
+    <div class="plogo"><img src="logos/xapo.svg" alt="Xapo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'pname',textContent:'Xapo'}))"></div>
+    <div class="plogo"><img src="logos/hsbc.svg" alt="HSBC" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'pname',textContent:'HSBC'}))"></div>
+    <div class="plogo"><img src="logos/onezero.svg" alt="oneZero Financial" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'pname',textContent:'oneZero'}))"></div>
+    <div class="plogo"><img src="logos/wise.svg" alt="Wise" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'pname',textContent:'Wise'}))"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="band band--ink" id="contact">
+  <section class="section wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="hi">Hello.</div>
+        <h2>Let us buy you a coffee.</h2>
+        <p style="margin-top:18px;"><a class="mail" href="mailto:sales@steelhatch.co.uk">sales@steelhatch.co.uk</a></p>
+        <div class="socials">
+          <a href="https://x.com/jaesteelhatch" target="_blank" rel="noopener">X</a>
+          <a href="https://www.linkedin.com/company/steelhatch/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <a class="foot" href="#fixed-income">More Information <span aria-hidden="true">→</span></a>
       </div>
-      <div class="card">
-        <div class="body">
-          <h3>Liquidity Services</h3>
-          <p>SteelHatch uses bespoke liquidity pools tailored to connect your demand with market supply as quickly as possible.</p>
-          <p>Our liquidity technology provides retail brokers with multi-asset execution, prime brokerage services as well as a sophisticated suite of trading tools.</p>
+      <form id="contact-form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New enquiry from steelhatch.co.uk">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="frow">
+          <div class="field"><label for="fn">First name</label><input id="fn" name="first_name" required></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" name="last_name" required></div>
         </div>
-        <div class="foot muted">Coming Soon</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT / CAPITAL ============ -->
-<section class="section" id="capital">
-  <div class="wrap about">
-    <div>
-      <div class="eyebrow">SteelHatch Capital</div>
-      <h2 class="big">A proprietary firm for fintech and liquidity solutions.</h2>
-      <p>We provide dynamic fintech and liquidity solutions to a broad range of clients. Our primary function is identifying and managing arbitrages, with proprietary risk as a secondary income stream.</p>
-      <p>An arbitrage-based fund minimises market exposure. We identify mispricing across all markets and guarantee a profit from each trade idea.</p>
-      <p>Our team's background spans both institutional and retail sectors, including liquidity providers, proprietary firms, hedge funds, retail brokers, and digital currency exchanges.</p>
-    </div>
-    <div class="about-art" aria-hidden="true">
-      <svg viewBox="0 0 400 300" width="100%" height="100%">
-        <rect width="400" height="300" fill="#2E3E54"/>
-        <path d="M40 240 L120 170 L190 205 L270 110 L360 60" fill="none" stroke="#BFD0E3" stroke-width="4"/>
-        <circle cx="120" cy="170" r="6" fill="#fff"/><circle cx="190" cy="205" r="6" fill="#fff"/>
-        <circle cx="270" cy="110" r="6" fill="#fff"/><circle cx="360" cy="60" r="6" fill="#fff"/>
-        <g font-family="Space Mono,monospace" fill="#7e93b3" font-size="13">
-          <text x="40" y="285">arbitrage</text><text x="300" y="285">δ-neutral</text>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FIXED INCOME DETAIL ============ -->
-<section class="section" id="fixed-income" style="padding-top:0;">
-  <div class="wrap">
-    <div class="fis">
-      <div class="eyebrow">Fixed-Income Security</div>
-      <h2 class="big" style="max-width:18ch;">A coupon paid out or compounded monthly on liquid assets.</h2>
-      <p style="max-width:60ch;">SteelHatch allows a wide range of deposit and withdrawal methods. Clients can move between security and decentralisation based on preference.</p>
-      <a class="btn" href="#contact">Start Investing</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURES ============ -->
-<section class="section" style="padding-top:0;">
-  <div class="wrap">
-    <div class="features">
-      <div class="feature">
-        <div class="n">01</div>
-        <h3>Principal Protected</h3>
-        <p>SteelHatch guarantees a minimum return equal to the client's initial investment amount, prioritising coupon payments over profits.</p>
-      </div>
-      <div class="feature">
-        <div class="n">02</div>
-        <h3>Excess Returns</h3>
-        <p>Operating on a small-mid enterprise scale, clients benefit from market-exceeding returns without struggling for liquidity.</p>
-      </div>
-      <div class="feature">
-        <div class="n">03</div>
-        <h3>Delta Neutral</h3>
-        <p>Volatility, regulatory shifts and unexpected events are unavoidable — SteelHatch empowers you to thrive despite them.</p>
-      </div>
-      <div class="feature">
-        <div class="n">04</div>
-        <h3>Supreme Liquidity</h3>
-        <p>We invest in assets and strategies that show results in a low time frame. Clients enjoy swift withdrawals processed within a week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STATS ============ -->
-<section class="section" style="padding-top:0;">
-  <div class="wrap">
-    <div class="divider-label">Exponential Growth</div>
-    <div class="stats">
-      <div class="stat"><div class="num">12.68%</div><div class="lab">Annualised Returns</div></div>
-      <div class="stat"><div class="num">1%</div><div class="lab">Monthly Returns</div></div>
-      <div class="stat"><div class="num">100+</div><div class="lab">Managed Accounts</div></div>
-      <div class="stat"><div class="num">0</div><div class="lab">Material Drawdowns</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARTNERS ============ -->
-<section class="section" style="padding-top:0;">
-  <div class="wrap">
-    <div class="divider-label">Trusted Partners in Financial Success</div>
-    <div class="partners">
-      <div class="plogo">Partner logo<br>(replace)</div>
-      <div class="plogo">Partner logo<br>(replace)</div>
-      <div class="plogo">Partner logo<br>(replace)</div>
-      <div class="plogo">Partner logo<br>(replace)</div>
-      <div class="plogo">Partner logo<br>(replace)</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section" id="contact" style="padding-top:0;">
-  <div class="wrap">
-    <div class="contact">
-      <div class="contact-grid">
-        <div>
-          <div class="hi">Hello.</div>
-          <h2>Let us buy you a coffee.</h2>
-          <p style="margin-top:18px;"><a class="mail" href="mailto:sales@steelhatch.co.uk">sales@steelhatch.co.uk</a></p>
-          <div class="socials">
-            <a href="https://x.com/jaesteelhatch" target="_blank" rel="noopener">X</a>
-            <a href="https://www.linkedin.com/company/steelhatch/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
+        <div class="frow">
+          <div class="field"><label for="em">Email</label><input id="em" type="email" name="email" required></div>
+          <div class="field"><label for="co">Company</label><input id="co" name="company"></div>
         </div>
-
-        <form id="contact-form">
-          <!-- Web3Forms: paste your free access key below (see the deploy notes) -->
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-          <input type="hidden" name="subject" value="New enquiry from steelhatch.co.uk">
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-
-          <div class="row">
-            <div class="field"><label for="fn">First name</label><input id="fn" name="first_name" required></div>
-            <div class="field"><label for="ln">Last name</label><input id="ln" name="last_name" required></div>
-          </div>
-          <div class="row">
-            <div class="field"><label for="em">Email</label><input id="em" type="email" name="email" required></div>
-            <div class="field"><label for="co">Company</label><input id="co" name="company"></div>
-          </div>
-          <div class="field"><label for="msg">Write a message</label><textarea id="msg" name="message" required></textarea></div>
-          <button type="submit" class="submit">Submit</button>
-          <div id="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </div>
+        <div class="field"><label for="msg">Write a message</label><textarea id="msg" name="message" required></textarea></div>
+        <button type="submit" class="submit">Submit</button>
+        <div id="form-status" role="status" aria-live="polite"></div>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site">
   <div class="wrap">
     <div>©2024 SteelHatch Quantitative Sdn Bhd ("SteelHatch") — Company number 202301045226.</div>
@@ -393,37 +323,19 @@
 </footer>
 
 <script>
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  form.addEventListener('submit', async (e) => {
+  const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
+  form.addEventListener('submit',async(e)=>{
     e.preventDefault();
-    const btn = form.querySelector('button');
-    const key = form.querySelector('[name=access_key]').value;
-    if (key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-      status.className = 'err';
-      status.textContent = 'Form not configured yet — add your Web3Forms access key.';
-      return;
-    }
-    btn.disabled = true; status.className = ''; status.textContent = 'Sending…';
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body: new FormData(form)
-      });
-      const data = await res.json();
-      if (data.success){
-        status.className = 'ok';
-        status.textContent = 'Thanks — your message is on its way. We\u2019ll be in touch.';
-        form.reset();
-      } else {
-        status.className = 'err';
-        status.textContent = 'Something went wrong. Please email sales@steelhatch.co.uk directly.';
-      }
-    } catch {
-      status.className = 'err';
-      status.textContent = 'Network issue. Please email sales@steelhatch.co.uk directly.';
-    } finally { btn.disabled = false; }
+    const btn=form.querySelector('button'),key=form.querySelector('[name=access_key]').value;
+    if(key==='YOUR_WEB3FORMS_ACCESS_KEY'){status.className='err';status.textContent='Form not configured yet — add your Web3Forms access key.';return;}
+    btn.disabled=true;status.className='';status.textContent='Sending…';
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+      const data=await res.json();
+      if(data.success){status.className='ok';status.textContent='Thanks — your message is on its way. We\u2019ll be in touch.';form.reset();}
+      else{status.className='err';status.textContent='Something went wrong. Please email sales@steelhatch.co.uk directly.';}
+    }catch{status.className='err';status.textContent='Network issue. Please email sales@steelhatch.co.uk directly.';}
+    finally{btn.disabled=false;}
   });
 </script>
 </body>

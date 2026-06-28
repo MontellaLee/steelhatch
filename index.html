@@ -11,26 +11,30 @@
 <meta property="og:url" content="https://www.steelhatch.co.uk">
 <meta property="og:site_name" content="SteelHatch">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="assets/social-share.jpg">
+<meta name="twitter:image" content="assets/social-share.jpg">
+<link rel="icon" type="image/png" href="logos/steelhatch.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- Live site uses Avenir LT Std (proprietary). Nunito Sans is the closest Google Fonts match. -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --paper:#F2F0E9; --paper-2:#E9E6DC;
-    --ink:#141414; --ink-soft:#3d3d3a;
-    --navy:#2E3E54; --navy-deep:#222F41;
-    --slate:#5B7196; --sky:#BFD0E3; --sky-soft:#D6E0EC;
-    --line:#1414141a;
+    --paper:#F8F6F3; --paper-2:#ECEAE2;
+    --ink:#0d0d0d; --ink-soft:#3d3d3a;
+    --navy:#243B5A; --navy-deep:#1B2E47;
+    --slate:#5B7196; --petal:#5670A8; --sky:#BFD0E3; --sky-soft:#CCDAF0;
+    --line:#0d0d0d1a;
     --maxw:1720px;
     --gutter:clamp(24px,5vw,120px);
     --r:14px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.04;letter-spacing:-0.02em;margin:0;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:"Nunito Sans",sans-serif;line-height:1.06;letter-spacing:-0.02em;margin:0;}
   p{margin:0 0 1rem;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
@@ -39,14 +43,13 @@
   .section{padding:clamp(64px,8vw,120px) 0;}
 
   /* ---------- header ---------- */
-  header.site{position:sticky;top:0;z-index:50;background:rgba(242,240,233,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(248,246,243,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .nav{display:flex;align-items:center;justify-content:space-between;height:78px;}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
-  .brand .mark{width:36px;height:36px;flex:0 0 auto;}
-  .brand .word{font-family:"Archivo";font-weight:800;font-size:19px;letter-spacing:.04em;line-height:1;}
-  .brand .word small{display:block;font-size:10px;font-weight:600;letter-spacing:.34em;color:var(--slate);margin-top:3px;}
+  .brand .mark{height:36px;width:auto;flex:0 0 auto;}
+  @media(max-width:480px){.brand .mark{height:30px;}}
 
-  .btn{display:inline-block;font-family:"Archivo";font-weight:700;font-size:14px;letter-spacing:.02em;text-decoration:none;cursor:pointer;padding:13px 28px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:all .18s ease;}
+  .btn{display:inline-block;font-family:"Nunito Sans";font-weight:800;font-size:14px;letter-spacing:.02em;text-decoration:none;cursor:pointer;padding:13px 28px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:all .18s ease;}
   .btn:hover{background:var(--ink);color:var(--paper);}
   .btn--solid{background:var(--navy);border-color:var(--navy);color:#fff;}
   .btn--solid:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff;}
@@ -58,12 +61,13 @@
   .hero h1{font-weight:900;font-size:clamp(42px,5.6vw,94px);}
   .hero .lede{margin-top:24px;max-width:34ch;color:var(--ink-soft);font-size:clamp(17px,1.4vw,20px);}
   .hero .cta-row{margin:32px 0 44px;display:flex;gap:14px;flex-wrap:wrap;}
-  .hero__art{position:relative;overflow:hidden;}
-  .hero__art svg{position:absolute;inset:0;width:100%;height:100%;}
+  .hero__art{display:flex;align-items:center;justify-content:center;padding:clamp(24px,3vw,56px);}
+  .hero__art svg{width:100%;height:auto;max-height:80vh;}
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;min-height:0;}
-    .hero__art{order:2;height:300px;}
-    .hero__content{padding:48px var(--gutter);}
+    .hero__art{order:2;padding:4px var(--gutter) 44px;}
+    .hero__art svg{max-height:none;max-width:440px;}
+    .hero__content{padding:48px var(--gutter) 24px;}
   }
 
   /* ---------- service cards ---------- */
@@ -73,7 +77,7 @@
   .card .body{padding:28px 28px 24px;flex:1;}
   .card h3{font-size:22px;font-weight:800;margin-bottom:14px;}
   .card p{color:var(--ink-soft);font-size:15px;}
-  .card .foot{border-top:1.5px solid var(--ink);padding:17px 28px;font-family:"Archivo";font-weight:700;font-size:14.5px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;}
+  .card .foot{border-top:1.5px solid var(--ink);padding:17px 28px;font-family:"Nunito Sans";font-weight:800;font-size:14.5px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;}
   .card .foot.muted{color:var(--slate);}
   a.foot:hover{background:var(--sky-soft);}
 
@@ -81,16 +85,18 @@
   .band{width:100%;}
   .band--sky{background:var(--sky-soft);}
   .band--navy{background:var(--navy);color:#fff;}
-  .band--ink{background:var(--ink);color:var(--paper);}
+  .band--ink{background:#000;color:var(--paper);}
 
-  .eyebrow{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:18px;}
-  h2.big{font-size:clamp(30px,4vw,52px);font-weight:800;margin-bottom:24px;}
+  .eyebrow{font-family:"Nunito Sans";font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:18px;}
+  h2.big{font-size:clamp(30px,4vw,52px);font-weight:900;margin-bottom:24px;}
 
   /* ---------- about ---------- */
   .about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center;}
   @media(max-width:900px){.about{grid-template-columns:1fr;gap:36px;}}
   .about p{color:var(--ink-soft);font-size:16px;}
-  .about-art{border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--navy);}
+  .about-art{border-radius:18px;overflow:hidden;aspect-ratio:4/5;max-height:560px;background:var(--navy);justify-self:end;width:100%;}
+  .about-art img{width:100%;height:100%;object-fit:cover;}
+  @media(max-width:900px){.about-art{aspect-ratio:3/2;max-height:340px;}}
 
   /* ---------- fixed income band ---------- */
   .band--navy .eyebrow{color:var(--sky);}
@@ -121,16 +127,16 @@
   @media(max-width:480px){.partners{grid-template-columns:repeat(2,1fr);}}
   .plogo{display:flex;align-items:center;justify-content:center;min-height:60px;}
   .plogo img{max-height:46px;max-width:100%;width:auto;object-fit:contain;}
-  .pname{font-family:"Archivo";font-weight:800;font-size:clamp(17px,1.5vw,22px);letter-spacing:.01em;color:var(--ink-soft);}
+  .pname{font-family:"Nunito Sans";font-weight:800;font-size:clamp(17px,1.5vw,22px);letter-spacing:.01em;color:var(--ink-soft);}
 
   /* ---------- contact ---------- */
   .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,64px);}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:34px;}}
   .band--ink h2{color:#fff;font-size:clamp(28px,4vw,46px);}
-  .band--ink .hi{font-family:"Archivo";font-weight:800;font-size:22px;margin-bottom:6px;}
-  a.mail{font-family:"Space Mono";color:var(--sky);text-decoration:none;border-bottom:1px solid #ffffff33;padding-bottom:2px;}
+  .band--ink .hi{font-family:"Nunito Sans";font-weight:800;font-size:22px;margin-bottom:6px;}
+  a.mail{font-family:"Nunito Sans";font-weight:600;color:var(--sky);text-decoration:none;border-bottom:1px solid #ffffff33;padding-bottom:2px;}
   .socials{margin-top:26px;display:flex;gap:14px;}
-  .socials a{font-family:"Archivo";font-weight:700;font-size:13px;border:1px solid #ffffff44;border-radius:999px;padding:9px 18px;text-decoration:none;color:#fff;transition:.18s;}
+  .socials a{font-family:"Nunito Sans";font-weight:800;font-size:13px;border:1px solid #ffffff44;border-radius:999px;padding:9px 18px;text-decoration:none;color:#fff;transition:.18s;}
   .socials a:hover{background:#fff;color:var(--ink);}
   form .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   @media(max-width:520px){form .frow{grid-template-columns:1fr;}}
@@ -140,7 +146,7 @@
   input:focus,textarea:focus{outline:2px solid var(--sky);outline-offset:1px;border-color:transparent;}
   textarea{min-height:110px;resize:vertical;}
   .hp{position:absolute;left:-9999px;}
-  button.submit{margin-top:6px;font-family:"Archivo";font-weight:700;font-size:15px;cursor:pointer;background:var(--sky);color:var(--ink);border:0;border-radius:999px;padding:14px 34px;transition:.18s;}
+  button.submit{margin-top:6px;font-family:"Nunito Sans";font-weight:800;font-size:15px;cursor:pointer;background:var(--sky);color:var(--ink);border:0;border-radius:999px;padding:14px 34px;transition:.18s;}
   button.submit:hover{background:#fff;}
   button.submit:disabled{opacity:.55;cursor:not-allowed;}
   #form-status{margin-top:14px;font-size:14px;min-height:20px;}
@@ -148,7 +154,7 @@
 
   footer.site{border-top:1px solid var(--line);padding:34px 0;}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);}
-  .divider-label{font-family:"Space Mono";font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:34px;}
+  .divider-label{font-family:"Nunito Sans";font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:34px;}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 </style>
 </head>
@@ -156,12 +162,8 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="SteelHatch home">
-      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-        <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#141414" stroke-width="6"/>
-        <polygon points="50,26 71,38 71,62 50,74 29,62 29,38" fill="#2E3E54"/>
-      </svg>
-      <span class="word">STEELHATCH<small>QUANTITATIVE</small></span>
+    <a class="brand" href="#top" aria-label="SteelHatch Quantitative home">
+      <img class="mark" src="logos/steelhatch.png" alt="SteelHatch Quantitative" width="764" height="220">
     </a>
     <a class="btn" href="#contact">Contact Us</a>
   </div>
@@ -173,7 +175,7 @@
     <div class="hero__inner">
       <h1>Fundamentals &amp; Quantitative Methods as Profit Drivers</h1>
       <p class="lede">Dynamic fintech and liquidity solutions, built on arbitrage and disciplined risk.</p>
-      <div class="cta-row"><a class="btn btn--solid" href="#contact">Contact Us</a></div>
+      <div class="cta-row"><a class="btn" href="#contact">Contact Us</a></div>
       <div class="cards">
         <div class="card">
           <div class="body">
@@ -195,14 +197,13 @@
     </div>
   </div>
   <div class="hero__art">
-    <svg viewBox="0 0 500 750" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="500" height="750" fill="#E9E6DC"/>
-      <g fill="#BFD0E3"><g transform="translate(0,0) rotate(90 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
-      <g fill="#2E3E54"><g transform="translate(250,0) rotate(180 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
-      <g fill="#5B7196"><g transform="translate(0,250) rotate(0 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
-      <g fill="#D6E0EC"><g transform="translate(250,250) rotate(270 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
-      <g fill="#2E3E54"><g transform="translate(0,500) rotate(90 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
-      <g fill="#141414"><g transform="translate(250,500) rotate(180 125 125)"><path d="M0 0 H250 A250 250 0 0 1 0 250 Z"/></g></g>
+    <svg viewBox="0 0 476 702" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M230,20 L20,20 A210,210 0 0 0 230,230 Z" fill="#CCDAF0"/>
+      <path d="M456,20 L246,20 A210,210 0 0 0 456,230 Z" fill="#5670A8"/>
+      <path d="M20,456 L20,246 A210,210 0 0 0 230,456 Z" fill="#5670A8"/>
+      <path d="M456,456 L456,246 A210,210 0 0 0 246,456 Z" fill="#CCDAF0"/>
+      <path d="M20,682 L20,472 A210,210 0 0 0 230,682 Z" fill="#5670A8"/>
+      <path d="M246,472 L456,472 A210,210 0 0 1 246,682 Z" fill="#0d0d0d"/>
     </svg>
   </div>
 </section>
@@ -218,16 +219,8 @@
         <p>An arbitrage-based fund minimises market exposure. We identify mispricing across all markets and guarantee a profit from each trade idea.</p>
         <p>Our team's background spans both institutional and retail sectors, including liquidity providers, proprietary firms, hedge funds, retail brokers, and digital currency exchanges.</p>
       </div>
-      <div class="about-art" aria-hidden="true">
-        <svg viewBox="0 0 400 250" width="100%" height="100%">
-          <rect width="400" height="250" fill="#2E3E54"/>
-          <path d="M40 200 L120 140 L185 170 L265 95 L360 50" fill="none" stroke="#BFD0E3" stroke-width="4"/>
-          <circle cx="120" cy="140" r="6" fill="#fff"/><circle cx="185" cy="170" r="6" fill="#fff"/>
-          <circle cx="265" cy="95" r="6" fill="#fff"/><circle cx="360" cy="50" r="6" fill="#fff"/>
-          <g font-family="Space Mono,monospace" fill="#7e93b3" font-size="13">
-            <text x="36" y="235">arbitrage</text><text x="300" y="235">δ-neutral</text>
-          </g>
-        </svg>
+      <div class="about-art">
+        <img src="assets/dollar-bill.jpg" alt="Engraved dollar-bill portrait illustration" loading="lazy" width="900" height="1202">
       </div>
     </div>
   </section>

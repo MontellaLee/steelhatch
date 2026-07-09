@@ -175,10 +175,10 @@
   #form-status.ok{color:#9fe0b0;} #form-status.err{color:#f3b0a8;}
 
   footer.site{background:#000;padding:34px 0;}
-  footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6);}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6);padding:0 clamp(24px,4vw,64px);}
   footer.site a{color:rgba(255,255,255,.78);text-decoration:none;}
   footer.site a:hover{text-decoration:underline;}
-  @media(max-width:720px){footer.site .wrap{flex-direction:column;align-items:center;text-align:center;gap:8px;}}
+  @media(max-width:720px){.foot-row{flex-direction:column;align-items:center;text-align:center;gap:8px;}}
   .divider-label{font-family:"Montserrat";font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:clamp(40px,5vw,56px);text-align:center;}
   /* scroll reveal: .reveal is added by JS only, so content stays visible without JS.
      Animates `translate` (not transform) — .feature:nth-child(even) needs its transform stagger intact. */
@@ -328,7 +328,7 @@
 </div>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="foot-row">
     <div>© <span id="year">2026</span> SteelHatch Quantitative Sdn Bhd — Company No. 202301045226</div>
     <div><a href="mailto:sales@steelhatch.co.uk">sales@steelhatch.co.uk</a></div>
   </div>

@@ -45,10 +45,14 @@
 
   /* ---------- header ---------- */
   header.site{position:sticky;top:0;z-index:50;background:transparent;backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease;}
-  header.site.scrolled{background:rgba(248,246,243,.82);border-bottom-color:var(--line);box-shadow:0 8px 24px rgba(13,13,13,.05);}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);}
+  header.site.scrolled{background:rgba(248,246,243,.7);border-bottom-color:var(--line);box-shadow:0 8px 24px rgba(13,13,13,.05);}
+  header.site.header-dark{background:rgba(13,13,13,.6);border-bottom-color:rgba(255,255,255,.14);box-shadow:0 8px 24px rgba(0,0,0,.35);}
+  header.site.header-dark .mark{filter:brightness(0) invert(1);}
+  header.site.header-dark .btn{border-color:#fff;color:#fff;}
+  header.site.header-dark .btn:hover{background:#fff;color:var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);padding:0 clamp(24px,4vw,64px);}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
-  .brand .mark{height:clamp(32px,2.5vw + 16px,48px);width:auto;flex:0 0 auto;}
+  .brand .mark{height:clamp(32px,2.5vw + 16px,48px);width:auto;flex:0 0 auto;transition:filter .25s ease;}
 
   .btn{display:inline-block;font-family:"Montserrat";font-weight:800;font-size:14px;letter-spacing:.02em;text-decoration:none;cursor:pointer;padding:13px 28px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:all .18s ease;}
   .btn:hover{background:var(--ink);color:var(--paper);}
@@ -179,7 +183,7 @@
 <body>
 
 <header class="site">
-  <div class="wrap nav">
+  <div class="nav">
     <a class="brand" href="#top" aria-label="SteelHatch Quantitative home">
       <img class="mark" src="logos/steelhatch.png" alt="SteelHatch Quantitative" width="764" height="220">
     </a>
@@ -325,8 +329,14 @@
 
 <script>
   const hdr=document.querySelector('header.site');
-  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>20);
+  const darkBands=[...document.querySelectorAll('.band--navy,.band--ink')];
+  const onScroll=()=>{
+    hdr.classList.toggle('scrolled',window.scrollY>20);
+    const mid=hdr.offsetHeight/2;
+    hdr.classList.toggle('header-dark',darkBands.some(b=>{const r=b.getBoundingClientRect();return r.top<mid&&r.bottom>mid;}));
+  };
   addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
   onScroll();
 
   const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
